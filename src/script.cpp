@@ -78,6 +78,46 @@ int Script::declareArray(Lex & lex)
 	return id;
 }
 
+int Script::declareLabel(Lex & lex, int link)
+{
+	int id;
+	if ((id = labels.findLinkByName(lex.getValue())) == -1)
+	{
+		id = labels.put(new Label(lex, link));
+		labels[id].setID(id);
+	}
+	else
+		throw ParserError("Double declaring label with name \"%s\" (first appear on line %d) on line %d", lex.getValue(),
+			labels[id].getLine(), lex.getLine());
+
+	return id;
+}
+
+void Script::linkGoto(Lex & lex, RPNLabel & label)
+{
+	int id;
+
+	if ((id = labels.findLinkByName(lex.getValue())) != -1)
+		label.set(labels[id].getLink());
+	else
+	{
+		id = gotos.put(new Goto(lex, label));
+		gotos[id].setID(id);
+	}
+}
+
+void Script::CorrectGotos()
+{
+	int id;
+	Goto * gt;
+
+	while ((gt = gotos.getFirstUncorrected()) != 0)
+		if ((id = labels.findLinkByName(gt->getName())) != -1)
+			gt->correctOnLabel(labels[id]);
+		else	
+			throw ParserError("Goto (line %d) on label \"%s\" which unexistent", gt->getLine(), gt->getName());
+}
+
 void Script::print() const
 {
 	printf("======== SCRIPT =======\n");
@@ -87,5 +127,9 @@ void Script::print() const
 	integers.printPlain();
 	printf("\n--= TABLE OF ARRAYS =--\n");
 	arrays.printPlain();
+	printf("\n--= TABLE OF LABELS =--\n");
+	labels.printPlain();
+	printf("\n--= TABLE OF GOTOS =--\n");
+	gotos.printPlain();
 	printf("\n\n");
 }

@@ -12,6 +12,8 @@ class Script {
 	friend class RPNVar;
 
 	IdentTable idents;
+	LabelTable labels;
+	GotoTable gotos;
 	IntTable integers;
 	IntArrayTable arrays;
 	RPNScript * rpn;
@@ -22,6 +24,10 @@ public:
 
 	int declareVar(Lex &);
 	int declareArray(Lex &);
+	int declareLabel(Lex &, int);
+	void linkGoto(Lex &, RPNLabel &);
+
+	void CorrectGotos();
 
 	IdentTable & getIdents();
 	IntTable & getIntegers();

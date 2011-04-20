@@ -56,7 +56,6 @@ int main()
 		s->getRPN().printPlain();
 		printf("\n\n");
 		s->getRPN().run();
-		//printf("\n");
 		printf("\n\n");
 		s->print();
 

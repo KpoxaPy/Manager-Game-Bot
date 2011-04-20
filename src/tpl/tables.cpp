@@ -103,6 +103,12 @@ void Table<T>::deleteLast()
 }
 
 template <class T>
+int Table<T>::getCount()
+{
+	return count;
+}
+
+template <class T>
 void Table<T>::printElem(const T & t) const
 {
 }

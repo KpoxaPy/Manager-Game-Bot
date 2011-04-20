@@ -34,6 +34,8 @@ public:
 	int put(T *);
 	void deleteLast();
 
+	int getCount();
+
 	void print() const;
 	void printSmall() const;
 	void printPlain() const;

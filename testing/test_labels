@@ -1,0 +1,15 @@
+label label1:
+	print("do cmd on label1\n");
+	goto label3;
+
+label label2:
+	print("do cmd on end\n");
+	goto ending;
+
+label label3:
+	print("do cmd on label3\n");
+	goto label2;
+
+label ending:
+	print("This is end\n");
+

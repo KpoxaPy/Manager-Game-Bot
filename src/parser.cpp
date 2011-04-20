@@ -52,6 +52,8 @@ Script * Parser::checkSyntax()
 
 	P();
 
+	scr->CorrectGotos();
+
 	return scr;
 }
 
@@ -76,7 +78,7 @@ void Parser::L()
 
 		if (*lex != LEX_IDENTIFICATOR)
 			throw ParserError(LEX_IDENTIFICATOR, *lex, rstack.getStack());
-		printf(" link(%s) ", lex->getValue());
+		scr->declareLabel(*lex, rpn->getCount());
 		getLex();
 
 		if (*lex != LEX_COLON)
@@ -187,16 +189,18 @@ void Parser::C()
 	rstack.push(rC);
 	if (*lex == LEX_GOTO)
 	{
+		RPNLabel * label;
 		getLex();
 
 		if (*lex != LEX_IDENTIFICATOR)
 			throw ParserError(LEX_IDENTIFICATOR, *lex, rstack.getStack());
 
-		printf(" P_LINK(%s) ", lex->getValue());
+		rpn->put(label = new RPNLabel);
+		scr->linkGoto(*lex, *label);
 
 		getLex();
 
-		printf(" P_GOTO ");
+		rpn->put(new RPNGo);
 	}
 	else if (*lex == LEX_SEMICOLON)
 	{
