@@ -52,7 +52,8 @@ class Parser {
 	void semicolon();
 
 public:
-	Parser(Lexer * = 0);
+	Parser(Lexer *);
+	Parser(Input * = 0);
 	~Parser();
 
 	Script * checkSyntax();

@@ -25,10 +25,18 @@ void Parser::getLex()
 
 Parser::Parser(Lexer * lexer)
 {
-	if (lexer == 0)
+	this->lexer = lexer;
+
+	lex = 0;
+	scr = 0;
+}
+
+Parser::Parser(Input * input)
+{
+	if (input == 0)
 		this->lexer = new Lexer;
 	else
-		this->lexer = lexer;
+		this->lexer = new Lexer(input);
 
 	lex = 0;
 	scr = 0;

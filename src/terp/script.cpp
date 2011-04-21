@@ -115,7 +115,7 @@ void Script::CorrectGotos()
 		if ((id = labels.findLinkByName(gt->getName())) != -1)
 			gt->correctOnLabel(labels[id]);
 		else	
-			throw ParserError("Goto (line %d) on label \"%s\" which unexistent", gt->getLine(), gt->getName());
+			throw ParserError("Goto (line %d) on label \"%s\" is incorrect: label doesn't exist", gt->getLine(), gt->getName());
 }
 
 void Script::print() const

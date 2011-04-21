@@ -36,6 +36,6 @@ VPATH := ../../
 .PHONY : clean
 
 clean :
-	rm -rf bin obj src/tags
+	rm -rf bin obj
 
 include $(wildcard $(addsuffix /*.d, $(objects_dirs)))
