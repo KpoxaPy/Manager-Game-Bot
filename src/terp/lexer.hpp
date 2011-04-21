@@ -1,8 +1,8 @@
 #ifndef _LEXER_HPP_
 #define _LEXER_HPP_
 
-#include "buffer.hpp"
-#include "input.hpp"
+#include "../stuff/buffer.hpp"
+#include "../stuff/input.hpp"
 #include "lex.hpp"
 
 

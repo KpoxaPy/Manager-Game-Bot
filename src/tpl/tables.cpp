@@ -2,7 +2,7 @@
 #define _TABLES_CPP_
 
 #include <stdio.h>
-#include "../exceptions.hpp"
+#include "../stuff/exceptions.hpp"
 #include "tables.hpp"
 
 template <class T>

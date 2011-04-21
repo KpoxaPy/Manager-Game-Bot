@@ -1,6 +1,6 @@
 #include <stdlib.h>
+#include "../stuff/exceptions.hpp"
 #include "parser.hpp"
-#include "exceptions.hpp"
 
 void Parser::checkOnVar()
 {

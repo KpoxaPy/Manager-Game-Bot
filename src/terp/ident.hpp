@@ -1,7 +1,7 @@
 #ifndef _IDENT_HPP_
 #define _IDENT_HPP_
 
-#include "tpl/tables.cpp"
+#include "../tpl/tables.cpp"
 #include "lex.hpp"
 
 class Ident {

@@ -2,7 +2,7 @@
 #define _ERRORS_HPP_
 
 #include <stdarg.h>
-#include "lex.hpp"
+#include "../terp/lex.hpp"
 
 class Error {
 protected:

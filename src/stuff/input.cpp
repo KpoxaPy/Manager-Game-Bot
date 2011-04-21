@@ -1,7 +1,7 @@
+#include <errno.h>
+#include <string.h>
 #include "exceptions.hpp"
 #include "input.hpp"
-#include "errno.h"
-#include "string.h"
 
 Input::Input()
 {

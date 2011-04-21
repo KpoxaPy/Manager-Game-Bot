@@ -1,7 +1,7 @@
 #ifndef _RPN_HPP_
 #define _RPN_HPP_
 
-#include "tpl/tables.cpp"
+#include "../tpl/tables.cpp"
 #include "script.hpp"
 
 class RPNElem;

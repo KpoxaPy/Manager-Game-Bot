@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include "exceptions.hpp"
-//#include "buffer.hpp"
-#include "parser.hpp"
-//#include "ident.hpp"
-//#include "script.hpp"
-//#include "RPN.hpp"
-//#include "tables.hpp"
+#include "stuff/exceptions.hpp"
+//#include "terp/buffer.hpp"
+#include "terp/parser.hpp"
+//#include "terp/ident.hpp"
+//#include "terp/script.hpp"
+//#include "terp/RPN.hpp"
+//#include "terp/tables.hpp"
 
 int main()
 {

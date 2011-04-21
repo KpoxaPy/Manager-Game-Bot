@@ -1,5 +1,5 @@
 #include <ctype.h>
-#include "exceptions.hpp"
+#include "../stuff/exceptions.hpp"
 #include "lexer.hpp"
 
 Lexer::Lexer(Input * src)

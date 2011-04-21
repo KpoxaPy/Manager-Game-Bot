@@ -1,5 +1,5 @@
+#include "../stuff/exceptions.hpp"
 #include "script.hpp"
-#include "exceptions.hpp"
 
 Script::Script()
 {

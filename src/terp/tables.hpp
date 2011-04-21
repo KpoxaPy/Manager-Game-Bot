@@ -1,7 +1,7 @@
 #ifndef _TABLES_HPP_
 #define _TABLES_HPP_
 
-#include "tpl/tables.cpp"
+#include "../tpl/tables.cpp"
 
 class IntTable : public Table<int> {
 	void printElem(const int &) const;

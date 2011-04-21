@@ -1,7 +1,7 @@
 #ifndef _LABEL_HPP_
 #define _LABEL_HPP_
 
-#include "tpl/tables.cpp"
+#include "../tpl/tables.cpp"
 #include "lex.hpp"
 
 class RPNLabel;

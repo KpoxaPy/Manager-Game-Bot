@@ -1,6 +1,6 @@
 #include <string.h>
+#include "../stuff/exceptions.hpp"
 #include "RPN.hpp"
-#include "exceptions.hpp"
 
 void RPNScript::nextCmd()
 {
