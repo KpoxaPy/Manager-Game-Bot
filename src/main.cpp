@@ -7,6 +7,7 @@ int main()
 {
 	try
 	{
+		//Parser parser(new FileInput("testfile"));
 		Parser parser;
 		Script * s;
 
